@@ -99,7 +99,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: 
+  m_LastLoadedLayoutName: LD
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -373,7 +373,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/GoogleMobileAds/Resources
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 38a30000
     m_LastClickedID: 41784
-    m_ExpandedIDs: 0000000034a9000036a9000038a90000
+    m_ExpandedIDs: ffffffff00000000887b00008c7b000032070100f0070100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -418,9 +418,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 0000000034a9000036a9000038a90000
+    m_SelectedIDs: 06a30000
+    m_LastClickedID: 41734
+    m_ExpandedIDs: ffffffff00000000887b00008c7b000032070100f0070100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -446,8 +446,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 06a30000
+    m_LastClickedInstanceID: 41734
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.11324197, y: -0.5324748, z: 0.06096653}
+    m_Target: {x: 0.30503413, y: -0.77327794, z: 0.05962343}
     speed: 2
     m_Value: {x: 0.11324197, y: -0.5324748, z: 0.06096653}
   m_RenderMode: 0
@@ -1125,7 +1125,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.1500397
+    m_Target: 4.284365
     speed: 2
     m_Value: 4.1500397
   m_Ortho:
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 121cffff
       m_LastClickedID: 0
       m_ExpandedIDs: b2f4ffffe2f6fffffefaffff
       m_RenameOverlay:
