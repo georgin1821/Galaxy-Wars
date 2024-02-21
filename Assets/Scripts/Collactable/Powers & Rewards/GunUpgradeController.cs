@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShieldPowerController : PlayerPowersControllerAbstract
+public class GunUpgradeController : PlayerCollectiblesControllerAbstract
 {
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        Player.Instance.ShieldsUp();
+        Player.Instance.UpgradeGun();
     }
 }

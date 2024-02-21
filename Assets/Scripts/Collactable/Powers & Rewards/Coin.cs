@@ -2,26 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Coin : PlayerCollectiblesControllerAbstract
 {
-    [SerializeField] float forwardSpeed;
-    [SerializeField] float playerRange;
-    [SerializeField] float smoothTime;
 
     private Vector3 velocity = Vector3.zero;
-    private float rfSpeed = .2f;
+    private float speed = -1f; // starts to move upwards and accelerates
+    private float accelaration = 2.5f;
 
-    private float speed = -1f;
-    private float accelaration = 1.5f;
-
-    private void Start()
-    {
-        forwardSpeed = Random.Range(forwardSpeed - rfSpeed, forwardSpeed + rfSpeed);
-    }
-    void Update()
+    //protected override void Start()
+    //{
+    //    forwardSpeed = Random.Range(forwardSpeed - rfSpeed, forwardSpeed + rfSpeed);
+    //}
+   protected override void Update()
     {
         {
-            if (Vector3.Distance(Player.Instance.transform.position, this.transform.position) > playerRange)
+            if (Vector3.Distance(Player.Instance.transform.position, this.transform.position) > distanceFromPlayer)
             {
                 speed = Mathf.Clamp(speed + (accelaration * Time.deltaTime), -1f, 5f);
                 transform.Translate(new Vector3(0, -forwardSpeed, 0) * speed * Time.deltaTime);
@@ -35,7 +30,7 @@ public class Coin : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {

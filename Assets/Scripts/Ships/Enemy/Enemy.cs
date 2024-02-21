@@ -88,14 +88,14 @@ public class Enemy : MonoBehaviour
     {
         if (UnityEngine.Random.Range(1, 100) <= chanchToDropPower)
         {
-            PowerUpController.Instance.InstatiateRandomPower(this.transform);
+            PowerUpController.Instance.InstatiatePower(this.transform);
         }
     }
     private void OnDiewDropGems()
     {
         if (UnityEngine.Random.Range(1, 100) <= chanchToDropPower)
         {
-            PowerUpController.Instance.InstatiateRandomPower(this.transform);
+           // PowerUpController.Instance.InstatiateRandomPower(this.transform);
         }
     }
     private void Die()

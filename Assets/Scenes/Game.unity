@@ -5423,7 +5423,6 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6064,7 +6063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.625, y: -66.99994}
+  m_AnchoredPosition: {x: 3.625, y: -67}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179938448
@@ -7227,11 +7226,11 @@ GameObject:
   - component: {fileID: 1328183881}
   - component: {fileID: 1328183884}
   - component: {fileID: 1328183892}
-  - component: {fileID: 1328183885}
   - component: {fileID: 1328183888}
   - component: {fileID: 1328183891}
   - component: {fileID: 1328183893}
   - component: {fileID: 1328183894}
+  - component: {fileID: 1328183895}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -7276,31 +7275,6 @@ MonoBehaviour:
   levelCoins: 0
   Difficulty: 0
   andOfAnimation: 0
---- !u!114 &1328183885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328183880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c47f0831af9d8bb4d8d2baeb9d875264, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powers:
-  - powerPrefab: {fileID: 5417190763307372368, guid: afbaa6ab075303c4bad9edbffe75b6b5, type: 3}
-    weight: 20
-    accumWeight: 0
-  - powerPrefab: {fileID: 3117221381593469663, guid: 57d6a9b4a31d4d043b3bae4ca4502291, type: 3}
-    weight: 0
-    accumWeight: 0
-  - powerPrefab: {fileID: 5417190763307372368, guid: 0b2641a41988a69449b53d3ecbabf89a, type: 3}
-    weight: 100
-    accumWeight: 0
-  - powerPrefab: {fileID: 623081208035813768, guid: 3546c6c182053324ba4cb07b6f1d7769, type: 3}
-    weight: 0
-    accumWeight: 0
 --- !u!114 &1328183888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7368,6 +7342,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b516625e93b7254b8c359614717256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1328183895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328183880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b30b36d29908b4da25fed200a989f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powers:
+  - powerPrefab: {fileID: 5417190763307372368, guid: afbaa6ab075303c4bad9edbffe75b6b5, type: 3}
+    weight: 10
+    accumWeight: 0
+  - powerPrefab: {fileID: 3117221381593469663, guid: 57d6a9b4a31d4d043b3bae4ca4502291, type: 3}
+    weight: 1
+    accumWeight: 0
+  - powerPrefab: {fileID: 5417190763307372368, guid: 0b2641a41988a69449b53d3ecbabf89a, type: 3}
+    weight: 1
+    accumWeight: 0
 --- !u!1 &1341084766
 GameObject:
   m_ObjectHideFlags: 0
@@ -9046,7 +9042,6 @@ ParticleSystemRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13961,7 +13956,6 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14260,7 +14254,6 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16471,6 +16464,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3776361749122958984, guid: 70ece082b4ff1a14dbb26d738c4d2063, type: 3}
+      propertyPath: isSpeedLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7062515720665501383, guid: 70ece082b4ff1a14dbb26d738c4d2063, type: 3}
       propertyPath: m_Enabled
       value: 1

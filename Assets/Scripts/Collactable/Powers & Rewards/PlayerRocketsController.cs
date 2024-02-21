@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRocketsController : PlayerPowersControllerAbstract
+public class PlayerRocketsController : PlayerCollectiblesControllerAbstract
 {
 
     protected override void OnTriggerEnter(Collider other)

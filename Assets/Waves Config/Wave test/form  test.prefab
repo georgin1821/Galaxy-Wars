@@ -66,7 +66,7 @@ MonoBehaviour:
       rotationSpeed: 400
     spawns:
       moveSpeed: 4
-      numberOfEnemies: 10
+      numberOfEnemies: 37
       timeBetweenSpawns: 0.3
     formMove:
       curve:
