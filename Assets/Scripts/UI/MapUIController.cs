@@ -4,9 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class MapUIController : MonoBehaviour
+public class MapUIController : SimpleSingleton<MapUIController>
 {
-    public static MapUIController instance;
 
     [SerializeField] GameObject[] levelStarGameObjects;
     [SerializeField] Sprite[] starImages = new Sprite[4];
@@ -14,19 +13,14 @@ public class MapUIController : MonoBehaviour
     [SerializeField] Sprite planetImageUnLocked;
     [SerializeField] List<Button> levelButtons;
 
-    [SerializeField] TMP_Text lvlCompleteInfo, scoreTxt, coinsRewardTxt, levelStartTxt;
+    [SerializeField] TMP_Text lvlCompleteInfo, scoreTxt,  levelStartTxt;
     [SerializeField] GameObject defeatPanel, lvlStartPanel, lvlCompletePanel;
 
     LoadingFrom load;
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-
         InitializeLevelMenu();
     }
     private void Start()
@@ -54,14 +48,13 @@ public class MapUIController : MonoBehaviour
 
     void InitializeLevelMenu()
     {
-        bool[] levels = GameDataManager.Instance.levels.ToArray();
-        levelStarGameObjects = new GameObject[levels.Length];
+        bool[] levels = GameDataManager.Instance.isLevelUnlocked.ToArray();
         for (int i = 0; i < levels.Length; i++)
         {
-            //levelStarGameObjects[i].transform.GetChild(0).gameObject.SetActive(false);
-            //levelStarGameObjects[i].transform.GetChild(1).gameObject.SetActive(false);
-            //levelStarGameObjects[i].transform.GetChild(2).gameObject.SetActive(false);
-            //levelStarGameObjects[i].transform.GetChild(3).gameObject.SetActive(false);
+            levelStarGameObjects[i].transform.GetChild(0).gameObject.SetActive(false);
+            levelStarGameObjects[i].transform.GetChild(1).gameObject.SetActive(false);
+            levelStarGameObjects[i].transform.GetChild(2).gameObject.SetActive(false);
+            levelStarGameObjects[i].transform.GetChild(3).gameObject.SetActive(false);
 
             if (levels[i])
             {
@@ -98,12 +91,6 @@ public class MapUIController : MonoBehaviour
                     break;
             }
         }
-    }
-    public void StageCompleteScreen()
-    {
-        lvlCompleteInfo.text = "Stage " + GameDataManager.Instance.LevelIndex + 1 + " " + GameDataManager.Instance.currentDifficulty;
-        scoreTxt.text = GameDataManager.Instance.LevelScore.ToString();
-        coinsRewardTxt.text = GameDataManager.Instance.LevelCoins.ToString();
     }
     public void SelectLevel()
     {

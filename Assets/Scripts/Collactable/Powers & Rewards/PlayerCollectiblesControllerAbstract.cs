@@ -14,8 +14,8 @@ public abstract class PlayerCollectiblesControllerAbstract : MonoBehaviour
 	[SerializeField] GameObject gainPowerVFX;
 	[SerializeField] AudioType collectClip;
 
-	private Vector3 velocity = Vector3.zero;
-	private bool isAttractedFromPlayer = false;
+	protected Vector3 velocity = Vector3.zero;
+	protected bool isAttractedFromPlayer = false;
 
 	protected void Start()
 	{
@@ -37,7 +37,7 @@ public abstract class PlayerCollectiblesControllerAbstract : MonoBehaviour
 			Vector3 target = Player.Instance.transform.position;
 
 			transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, smoothTime, Mathf.Infinity, Time.deltaTime);
-			isAttractedFromPlayer |= true;
+			isAttractedFromPlayer = true;
 		}
 	}
 

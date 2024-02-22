@@ -18,12 +18,13 @@ public class GameDataManager : Singleton<GameDataManager>
     //Data
     [HideInInspector] public int selectedShip;
     [HideInInspector] public int gems;
+    [HideInInspector] public int shipUpgradeCards;
     [HideInInspector] public int batteryLife;
     [HideInInspector] public bool isGameStartedFirstTime;
-    [HideInInspector] public List<bool> levels;
+     public List<bool> isLevelUnlocked;
     [HideInInspector] public LevelCompletedDifficulty[] levelCompletedDifficulty;
     [HideInInspector] public int coins;
-    [HideInInspector] private int levelsCount = 15;
+    [HideInInspector] public int levelsCount;
     [HideInInspector] private int levelsComplete = 0;
     [HideInInspector] public int squadsUnlocked = 1; //?
     [HideInInspector] public DateTime sessionTime;
@@ -35,8 +36,8 @@ public class GameDataManager : Singleton<GameDataManager>
     [HideInInspector] public bool[][] shipsSkills;//?
     [HideInInspector] public int CurrentLevel { get; set; }
     //Ships details
-    public ShipManager.Ship[] ships; //ship details
-    [HideInInspector] public ShipManager.Ship[] squad;
+    public Ship[] ships; //ship details
+    [HideInInspector] public Ship[] squad;
      public bool[] isShipUnlocked;  //bool to true to unlock a ship in the array
     [HideInInspector] public List<int> shipsPower;
     [HideInInspector] public List<int> shipsRank;
@@ -49,11 +50,6 @@ public class GameDataManager : Singleton<GameDataManager>
     private GameData data;
     private LevelCompletedDifficulty gameDifficulty;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        InitializeGameDate();
-    }
     void Start()
     {
         CurrentLevel = 0;
@@ -63,7 +59,7 @@ public class GameDataManager : Singleton<GameDataManager>
         Save();
     }
 
-    void InitializeGameDate()
+    public void InitializeGameDate()
     {
         currentTime = DateTime.UtcNow;
 
@@ -84,13 +80,14 @@ public class GameDataManager : Singleton<GameDataManager>
         {
             ships = ShipManager.Instance.shipsDetails;
             shipsCount = ships.Length;
+            levelsCount = Stages.Instance.StagesCount;
 
             sessionTime = DateTime.UtcNow;
             coins = 200;
             gems = 10;
+            shipUpgradeCards = 0;
             batteryLife = 90;
             enemiesKilled = 0;
-            levels = new List<bool>();
             levelCompletedDifficulty = new LevelCompletedDifficulty[5];
             shipsPower = new List<int>();
             shipsRank = new List<int>();
@@ -101,7 +98,7 @@ public class GameDataManager : Singleton<GameDataManager>
             isGameStartedFirstTime = false;
 
             UnlockSquads();
-            squad = new ShipManager.Ship[3] { ships[0], ships[1], ships[2] }; // squad
+           squad = new Ship[3] { ships[0], ships[1], ships[2] }; // squad
 
             //Unlock ships
             isShipUnlocked = new bool[shipsCount];
@@ -111,12 +108,12 @@ public class GameDataManager : Singleton<GameDataManager>
                 isShipUnlocked[i] = false;
             }
 
-            levels.Add(true);
-            for (int i = 1; i < levelsCount - 1; i++)
+            isLevelUnlocked = new List<bool>();
+            for (int i = 0; i < levelsCount; i++)
             {
-                levels.Add(false);
+                isLevelUnlocked.Add(false);
             }
-            levels[1] = true; //test
+            isLevelUnlocked[0] = true; //test
 
             //unlocking first ship locks the others
             for (int i = 0; i < dailyRewards.Length; i++)
@@ -136,8 +133,11 @@ public class GameDataManager : Singleton<GameDataManager>
             data = new GameData();
 
             data.Coins = coins;
-            data.IsGameStartedFirstTime = isGameStartedFirstTime;
-            data.Levels = levels;
+			data.Gems = gems;
+			data.ShipUpgradeCards = shipUpgradeCards;
+
+			data.IsGameStartedFirstTime = isGameStartedFirstTime;
+            data.IsLevelUnlocked = isLevelUnlocked;
             data.Squad = squad;
             data.IsShipUnlocked = isShipUnlocked;
             data.ShipsPower = shipsPower;
@@ -170,9 +170,10 @@ public class GameDataManager : Singleton<GameDataManager>
             {
                 data.Coins = coins;
                 data.Gems = gems;
+                data.ShipUpgradeCards = shipUpgradeCards;
                 data.IsGameStartedFirstTime = isGameStartedFirstTime;
-                data.Levels = levels;
-                data.Squad = squad;
+                data.IsLevelUnlocked = isLevelUnlocked;
+               data.Squad = squad;
                 data.IsShipUnlocked = isShipUnlocked;
                 data.ShipsRank = shipsRank;
                 data.SquadsUnlocked = squadsUnlocked;
@@ -259,15 +260,16 @@ class GameData
     public List<GameObject> ShipsPrefab { get; set; }
 
     public int SelectedShip { get; set; }
-    public ShipManager.Ship[] Squad;
+    public Ship[] Squad;
     public int Coins { get; set; }
+    public int ShipUpgradeCards { get; set; }
     public bool[] IsShipUnlocked { get; set; }
     public List<int> ShipsPower { get; set; }
     public List<int> ShipsRank { get; set; }
     public int Gems { get; set; }
     public int SquadsUnlocked { get; set; }
     public bool IsGameStartedFirstTime { get; set; }
-    public List<bool> Levels { get; set; }
+    public List<bool> IsLevelUnlocked { get; set; }
     public int BatteryLife { get; set; }
     public DateTime SessionTime { get; set; }
     public GameDifficulty CurrentDifficulty { get; set; }

@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class ShipManager : Singleton<ShipManager>
 {
-    public Ship[] shipsDetails;
-    protected override void Awake()
-    {
-        base.Awake();
-    }
+	public Ship[] shipsDetails;
+	protected override void Awake()
+	{
+		base.Awake();
+	}
 
-    [System.Serializable]
-    public class ShipObject
-    {
-        //squad, unlocked ships, power,prefab, sprite
-        public ShipName shipName;
-        public Sprite shipSprite;
-        public GameObject shipPrefab;
+	[System.Serializable]
+	public class ShipObject
+	{
+		//squad, unlocked ships, power,prefab, sprite
+	}
+}
+[System.Serializable]
+public class Ship
+{
+	public ShipName name;
+	public Sprite shipSprite;
+	public GameObject shipPrefab;
 
-        public int shipPower;
-    }
-    [System.Serializable]
-    public class Ship
-    {
-        public ShipObject ships;
-    }
+	public int startingPower;
+
+	[HideInInspector] public int currentPower;
+	[HideInInspector] public int rank = 1;
 }

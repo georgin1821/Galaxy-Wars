@@ -7,9 +7,16 @@ public class GameManager : Singleton<GameManager>
     public bool isSpeedLevel;
     [HideInInspector] public LoadingFrom loadingFrom;
 
-    //Dev Testing to be removed
+	//Dev Testing to be removed
 
-    public void LoadSceneWithNameFrom(string sceneName, LoadingFrom loadingFrom)
+
+	private void Start()
+	{
+		Stages.Instance.Setstages();
+		GameDataManager.Instance.InitializeGameDate();
+		
+	}
+	public void LoadSceneWithNameFrom(string sceneName, LoadingFrom loadingFrom)
     {
         this.loadingFrom = loadingFrom;
         LoadingWithFadeScenes.Instance.LoadScene(sceneName);

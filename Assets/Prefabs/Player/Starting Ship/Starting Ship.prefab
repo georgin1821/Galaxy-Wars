@@ -5173,7 +5173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlwaysShooting: 0
-  collideWithEnemy: 0
+  collideWithEnemy: 1
   isAbleToFire: 1
   engineVFX: {fileID: 8406044671327542910}
   shootingFlames: {fileID: 1059050182630161250}

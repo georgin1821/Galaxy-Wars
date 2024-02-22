@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063994825587911722}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4063994827385484022}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4063994825587911723
 AudioSource:
@@ -43,6 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1856394676934395723, guid: b9d503df14d571749838fe52664fb13a, type: 2}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -152,13 +153,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063994825660416706}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4063994827385484022}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4063994825660416707
 AudioSource:
@@ -171,6 +172,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2203343289925205177, guid: b9d503df14d571749838fe52664fb13a, type: 2}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -280,13 +282,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063994826276571715}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4063994827385484022}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4063994826276571740
 AudioSource:
@@ -299,6 +301,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3915206677805333624, guid: b9d503df14d571749838fe52664fb13a, type: 2}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -408,6 +411,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063994827385484020}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -417,7 +421,6 @@ Transform:
   - {fileID: 4063994826276571741}
   - {fileID: 4063994825660416732}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4063994827385484021
 MonoBehaviour:
@@ -438,17 +441,17 @@ MonoBehaviour:
     - type: 1
       clip: {fileID: 8300000, guid: 316c5a9072961a64696482a64fdbae8d, type: 3}
       volume: 0.3
-    - type: 2
+    - type: 0
       clip: {fileID: 8300000, guid: cf3eb052ff79a9145baf28a5c3e6cced, type: 3}
-      volume: 0.7
-    - type: 9
+      volume: 1
+    - type: 22
       clip: {fileID: 8300000, guid: df2fcab0cf2ed8d4d9138e23bda3d0e5, type: 3}
       volume: 0.1
-    - type: 10
-      clip: {fileID: 8300000, guid: d5d65226aadffe945bacfbcc33817691, type: 3}
-      volume: 0.8
-    - type: 11
-      clip: {fileID: 8300000, guid: e9926c2765c0c8047885db6207d6c328, type: 3}
+    - type: 24
+      clip: {fileID: 8300000, guid: 0bf456f9862f112458f07d84239d2031, type: 3}
+      volume: 1
+    - type: 23
+      clip: {fileID: 8300000, guid: 6cad787e3724d0e48bab75c121b88a4e, type: 3}
       volume: 0.4
     - type: 12
       clip: {fileID: 8300000, guid: 2e05483a8c72f1742aafe13eb3ffe231, type: 3}
@@ -457,7 +460,7 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: cfb730617b78b0e489fb5156e6af39ea, type: 3}
       volume: 1
     - type: 14
-      clip: {fileID: 8300000, guid: d3981495a93ad4d4eb4c19cdb1e937a8, type: 3}
+      clip: {fileID: 8300000, guid: cfb730617b78b0e489fb5156e6af39ea, type: 3}
       volume: 1
     - type: 15
       clip: {fileID: 8300000, guid: b71c1f9e87ab1b4419c2c8bdb1ceb78c, type: 3}
@@ -477,6 +480,9 @@ MonoBehaviour:
     - type: 20
       clip: {fileID: 8300000, guid: 3f0892cbbd62b17459b5d201d9d8a293, type: 3}
       volume: 0.8
+    - type: 25
+      clip: {fileID: 8300000, guid: 809ec7c55baf41b48b282ae695f41867, type: 3}
+      volume: 0.8
   - source: {fileID: 4063994826276571740}
     audio:
     - type: 7
@@ -484,6 +490,9 @@ MonoBehaviour:
       volume: 0.5
     - type: 8
       clip: {fileID: 8300000, guid: dd56a3125fcd4ef4d90850f8271cfaa1, type: 3}
+      volume: 0.5
+    - type: 9
+      clip: {fileID: 8300000, guid: 809ec7c55baf41b48b282ae695f41867, type: 3}
       volume: 0.5
   - source: {fileID: 4063994825660416707}
     audio:

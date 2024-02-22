@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using TMPro.EditorUtilities;
 
 
-public class LevelSelectMap : MonoBehaviour
+public class StartLevelUIController : MonoBehaviour
 {
     [SerializeField] GameObject easy, medium, hard;
 
@@ -13,19 +14,27 @@ public class LevelSelectMap : MonoBehaviour
     private GameDataManager GameData;
     private Button easyBtn, mediumBtn, hardButton;
     private Animator easyAnim, mediumAnim, hardAnim;
-    private string difficulty;
+    public TMP_Text rewCoins;
+    public TMP_Text rewGems;
+    public TMP_Text rewCards;
+    int currentLevel;
+	private string difficulty;
 
     private void Start()
     {
         //access buttons and anims components
         AccessButtonsAndAnimComponents();
         InitializeLevelMenu();
+
+        rewCoins.text = Stages.Instance.stages[currentLevel].rewCoins.ToString();
+        rewGems.text = Stages.Instance.stages[currentLevel].rewGems.ToString();
+        rewCards.text = Stages.Instance.stages[currentLevel].rewShipCards.ToString();
     }
 
     private void InitializeLevelMenu()
     {
         //cashing GameDataManager and currentSelectedLevel
-        int currentLevel = GameData.CurrentLevel;
+         currentLevel = GameData.CurrentLevel;
         LevelCompletedDifficulty completedDifficulty = GameData.levelCompletedDifficulty[currentLevel];
 
         //first disable all buttons and buttons animations

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3837460776482167722}
   - component: {fileID: 7062515720665501383}
   - component: {fileID: 4087789853038730333}
+  - component: {fileID: 3167285014964195121}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -51,13 +52,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedShip: 0
   gems: 0
+  shipUpgradeCards: 0
   batteryLife: 0
   isGameStartedFirstTime: 0
-  levels: 
+  isLevelUnlocked: 
   levelCompletedDifficulty: 
   coins: 0
+  levelsCount: 0
   squadsUnlocked: 1
-  shipsName: []
   enemiesKilled: 0
   musicVolume: 0
   soundVolume: 0
@@ -65,7 +67,7 @@ MonoBehaviour:
   dailyRewards: 
   ships: []
   squad: []
-  unlockedShips: 
+  isShipUnlocked: 
   shipsPower: 
   shipsRank: 
   shipsPrefab:
@@ -86,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ac1e17baac50a408907cca36715f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpeedLevel: 0
+  isSpeedLevel: 1
   loadingFrom: 0
 --- !u!114 &1140825770610722692
 MonoBehaviour:
@@ -159,15 +161,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipsDetails:
-  - ships:
-      shipName: 0
-      shipSprite: {fileID: 21300000, guid: c2115567aec5a65459dddb127c410f4c, type: 3}
-      shipPrefab: {fileID: 4798691700310100087, guid: 5f15cd99db2f9094ab247d0e4e80de3d, type: 3}
-  - ships:
-      shipName: 1
-      shipSprite: {fileID: 21300000, guid: 2782de4c7c1c8544a9809b0585c9ab37, type: 3}
-      shipPrefab: {fileID: 4798691700310100087, guid: 747bf6cf4321d82478f1011ed9bcd386, type: 3}
-  - ships:
-      shipName: 1
-      shipSprite: {fileID: 21300000, guid: 2782de4c7c1c8544a9809b0585c9ab37, type: 3}
-      shipPrefab: {fileID: 4798691700310100087, guid: 747bf6cf4321d82478f1011ed9bcd386, type: 3}
+  - name: 0
+    shipSprite: {fileID: 2069534439, guid: a2b9e2e1d4c47d2418d5564d5da60643, type: 3}
+    shipPrefab: {fileID: 4798691700310100087, guid: 5f15cd99db2f9094ab247d0e4e80de3d, type: 3}
+    startingPower: 100
+    currentPower: 0
+    rank: 1
+  - name: 1
+    shipSprite: {fileID: -760033720, guid: a2b9e2e1d4c47d2418d5564d5da60643, type: 3}
+    shipPrefab: {fileID: 4798691700310100087, guid: 747bf6cf4321d82478f1011ed9bcd386, type: 3}
+    startingPower: 100
+    currentPower: 0
+    rank: 1
+  - name: 2
+    shipSprite: {fileID: 21300000, guid: c2115567aec5a65459dddb127c410f4c, type: 3}
+    shipPrefab: {fileID: 4798691700310100087, guid: 3952944a042a10a4e9a36741c03cf59c, type: 3}
+    startingPower: 100
+    currentPower: 0
+    rank: 1
+--- !u!114 &3167285014964195121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8a1ecd5402b8149a385c4b6571298e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stages: []
+  stagesEasy: []
+  stagesmedium: []
+  stagesHard: []
+  gtagesCount: 0

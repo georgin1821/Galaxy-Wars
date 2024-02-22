@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6438535020281242702}
   - component: {fileID: -4216537047025905763}
   m_Layer: 0
-  m_Name: form  test
+  m_Name: form  sort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
       rotationSpeed: 400
     spawns:
       moveSpeed: 4
-      numberOfEnemies: 37
+      numberOfEnemies: 6
       timeBetweenSpawns: 0.3
     formMove:
       curve:
