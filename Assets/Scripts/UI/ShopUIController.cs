@@ -41,11 +41,16 @@ public class ShopUIController : MonoBehaviour
 			titletitleTxt.text = "Supply";
 			pane1.SetActive(true);
 			pane2.gameObject.SetActive(false);
+			supplyBtn.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+			currencyBtn.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, .4f);
 		}
 		if (button == currencyBtn)
 		{
 			pane1.gameObject.SetActive(false);
 			pane2.gameObject.SetActive(true);
+			supplyBtn.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, .4f);
+			currencyBtn.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+
 			titletitleTxt.text = "Currency";
 		}
 	}

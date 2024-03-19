@@ -22,6 +22,12 @@ scopes = {
 	"last_search.0B486DF2" = ""
 	"OpenInspectorPreview.0B486DF2" = "0"
 	"currentGroup.0B486DF2" = null
+	"last_search.98CF4AA6" = ""
+	"OpenInspectorPreview.98CF4AA6" = "0"
+	"currentGroup.98CF4AA6" = "scene"
+	"last_search.5A656512" = "ref=\"/Fade UI\""
+	"OpenInspectorPreview.5A656512" = "0"
+	"currentGroup.5A656512" = null
 }
 providers = {
 	adb = {
@@ -90,7 +96,7 @@ expandedQueries = [
 ]
 queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
-helperWidgetCurrentArea = "all"
+helperWidgetCurrentArea = "p:"
 disabledIndexers = ""
 minIndexVariations = 2
 findProviderIndexHelper = true

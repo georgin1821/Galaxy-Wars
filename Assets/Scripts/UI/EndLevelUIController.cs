@@ -6,16 +6,23 @@ using TMPro;
 
 public class EndLevelUIController : MonoBehaviour
 {
-	public TMP_Text rewardedCoins, rewardedGems, rewardedCards;
+	public TMP_Text rewardedCoins, rewardedGems, rewardedCards, dificultyTxt,  stageTct,scoreTxt;
 	void Start()
     {
-       rewardedCoins.text = Stages.Instance.stages[  GameDataManager.Instance.CurrentLevel].rewCoins.ToString();
+       rewardedCoins.text = GameDataManager.Instance.LevelCoins.ToString();
        rewardedCards.text = Stages.Instance.stages[  GameDataManager.Instance.CurrentLevel].rewShipCards.ToString();
        rewardedGems.text = Stages.Instance.stages[  GameDataManager.Instance.CurrentLevel].rewGems.ToString();
-    }
+        dificultyTxt.text = GameDataManager.Instance.currentDifficulty.ToString();
+        stageTct.text = GameDataManager.Instance.CurrentLevel.ToString();
+        scoreTxt.text = GameDataManager.Instance.LevelScore.ToString();
 
-    // Update is called once per frame
-    void Update()
+	}
+
+	public void SetInfo()
+	{
+		
+	}
+	void Update()
     {
         
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public abstract class PlayerCollectiblesControllerAbstract : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public abstract class PlayerCollectiblesControllerAbstract : MonoBehaviour
 	[SerializeField][Range(0f, 2f)] protected float distanceFromPlayer;
 	[SerializeField][Range(0f, .2f)] protected float smoothTime;
 	[SerializeField] protected float forwardSpeed;
-	[SerializeField] [Range(0f, 2f)] protected float speedRandomFactor;
+	[SerializeField][Range(0f, 2f)] protected float speedRandomFactor;
+	[SerializeField] protected GameObject floatingText;
 
 	[Header("VFXS Prefabs")]
 	[SerializeField] GameObject gainPowerVFX;
@@ -46,8 +48,10 @@ public abstract class PlayerCollectiblesControllerAbstract : MonoBehaviour
 		if (other.tag == "Player")
 		{
 			Destroy(gameObject);
+			Instantiate(floatingText, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
 			AudioController.Instance.PlayAudio(collectClip);
-			Instantiate(gainPowerVFX, Player.Instance.transform.position, Quaternion.identity);
+			GameObject go = Instantiate(gainPowerVFX, Player.Instance.transform.position, Quaternion.identity);
+			go.transform.SetParent(Player.Instance.gameObject.transform);
 		}
 	}
 

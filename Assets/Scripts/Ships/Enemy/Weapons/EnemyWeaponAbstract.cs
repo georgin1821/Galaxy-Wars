@@ -4,13 +4,15 @@ using UnityEngine;
 
 public abstract class EnemyWeaponAbstract : MonoBehaviour
 {
-    [SerializeField] protected GameObject prjectilePrefab;
+	[SerializeField] protected GameObject prjectilePrefab;
 
-    [Space(5)]
-    [SerializeField] protected float chanceToFire;
-    [SerializeField] protected int delayToShoot, repeatTime;
+	[Space(5)]
+	[SerializeField] protected float chanceToFire;
+	[SerializeField][Range(1, 5)] protected int delayToShoot = 2;
 
-    abstract protected void FireChance();
-    abstract public void Firing();
+	protected int autoRepeat = 3;
+
+	abstract protected void FireChance();
+	abstract public void Firing();
 
 }

@@ -9980,5 +9980,7 @@ MonoBehaviour:
   distanceFromPlayer: 1.18
   smoothTime: 0.116
   forwardSpeed: 2
-  gainPowerVFX: {fileID: 3267442988761078042, guid: b701ee9841dd410479dcb07b25d084cc, type: 3}
+  speedRandomFactor: 0.42
+  floatingText: {fileID: 4223254525163568219, guid: e6217991e2d1c1c4482ecbc928d7f9d1, type: 3}
+  gainPowerVFX: {fileID: 6381356175843215295, guid: b474e1c399c84614b8dc12cf3d17337f, type: 3}
   collectClip: 2

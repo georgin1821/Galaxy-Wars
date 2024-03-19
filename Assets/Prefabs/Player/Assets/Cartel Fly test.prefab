@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4290332912506064122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      propertyPath: m_Name
+      value: Cartel Fly test
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6472681522970682336}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 261806826518700089}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2469608803039282405}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -330542373427035572}
+  m_SourcePrefab: {fileID: 100100000, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+--- !u!1 &3984343013619560875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a5467be404c3924ea269d569f4ef9ac, type: 3}
+  m_PrefabInstance: {fileID: 4290332912506064122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6472681522970682336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984343013619560875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405216bedd9cced4a97378ccd5ab784b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 0}
+  health: 100
+  scoreValue: 150
+  deathVFX: {fileID: 0}
+  shipSound: 0
+  chanchToDropPower: 0
+  chanceOfDropingGold: 0
+  chanceOfDropMultipleCoins: 0
+  chanseOfDropGems: 0
+  cointToSpawn: 0
+--- !u!114 &261806826518700089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984343013619560875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0114d318a49533340bd3169c4ba21cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyState: 0
+--- !u!114 &2469608803039282405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984343013619560875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a69c913a2d274b45af346824140eaec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prjectilePrefab: {fileID: 165506286884226736, guid: ddc99ffdd2325334ea0001908ac31cb1, type: 3}
+  chanceToFire: 10
+  delayToShoot: 1
+  repeatTime: 1
+--- !u!114 &-330542373427035572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984343013619560875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7cd813c00911f4b84970ddcac16dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpeen: 90

@@ -122,6 +122,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -302,6 +304,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -391,6 +395,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -472,12 +478,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 165506286884226736, guid: ddc99ffdd2325334ea0001908ac31cb1, type: 3}
-  health: 3000
+  health: 200
   scoreValue: 100
   deathVFX: {fileID: 6617642959616773722, guid: 2cf4d65aab4c3b04ea5370f64f723fc4, type: 3}
   shipSound: 0
-  chanchToDropPower: 4
-  chanceOfDropingGold: 10
+  chanchToDropPower: 0
+  chanceOfDropingGold: 0
   chanceOfDropMultipleCoins: 0
   chanseOfDropGems: 4
   cointToSpawn: 0
@@ -506,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a69c913a2d274b45af346824140eaec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToFire: 10
   prjectilePrefab: {fileID: 165506286884226736, guid: ddc99ffdd2325334ea0001908ac31cb1, type: 3}
+  chanceToFire: 10
   delayToShoot: 0
   repeatTime: 0

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0284e4a6d6d564f3da479d4357154213
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 67827
+  packageName: Silent Planets Shoot 'Em Up Pack
+  packageVersion: 1.0
+  assetPath: Assets/LightningDuru/Script/BackgroundCtrl.cs
+  uploadId: 129869

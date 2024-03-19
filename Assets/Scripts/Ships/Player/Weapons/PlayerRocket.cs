@@ -14,13 +14,13 @@ public class PlayerRocket : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, 3f);
-        GameObject[] targets = Player.Instance.targets;        
-        int index = Random.Range(0, targets.Length - 1);
-        if(index < targets.Length)
-        {
-        targetPos = targets[index].transform.position;
-        StartCoroutine(SeekTargets());
-        }
+       //// GameObject[] targets = Player.Instance.targets;        
+       // int index = Random.Range(0, targets.Length - 1);
+       // if(index < targets.Length)
+       // {
+       // targetPos = targets[index].transform.position;
+       // StartCoroutine(SeekTargets());
+       // }
     }
 
     private void Update()

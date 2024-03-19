@@ -175,7 +175,7 @@ MonoBehaviour:
     rank: 1
   - name: 2
     shipSprite: {fileID: 21300000, guid: c2115567aec5a65459dddb127c410f4c, type: 3}
-    shipPrefab: {fileID: 4798691700310100087, guid: 3952944a042a10a4e9a36741c03cf59c, type: 3}
+    shipPrefab: {fileID: 4798691700310100087, guid: 4a0413513838ac24991d125007bb8a6f, type: 3}
     startingPower: 100
     currentPower: 0
     rank: 1
@@ -195,4 +195,3 @@ MonoBehaviour:
   stagesEasy: []
   stagesmedium: []
   stagesHard: []
-  gtagesCount: 0

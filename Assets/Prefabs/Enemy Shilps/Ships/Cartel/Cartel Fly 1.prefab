@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 4659930823735128229}
   - component: {fileID: 22746375996811547}
   - component: {fileID: -8667674394595477175}
+  - component: {fileID: 6024065083929031059}
   m_Layer: 3
   m_Name: Cartel Fly 1
   m_TagString: Enemy
@@ -366,8 +367,8 @@ MonoBehaviour:
   scoreValue: 100
   deathVFX: {fileID: 6617642959616773722, guid: 2cf4d65aab4c3b04ea5370f64f723fc4, type: 3}
   shipSound: 0
-  chanchToDropPower: 1
-  chanceOfDropingGold: 44
+  chanchToDropPower: 10
+  chanceOfDropingGold: 0
   chanceOfDropMultipleCoins: 0
   chanseOfDropGems: 4
   cointToSpawn: 3
@@ -397,9 +398,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prjectilePrefab: {fileID: 165506286884226736, guid: ddc99ffdd2325334ea0001908ac31cb1, type: 3}
-  chanceToFire: 10
-  delayToShoot: 1
-  repeatTime: 1
+  chanceToFire: 8.1
+  delayToShoot: 3
+--- !u!114 &6024065083929031059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129826148347833026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7cd813c00911f4b84970ddcac16dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpeen: 90
 --- !u!1 &8586712860536768756
 GameObject:
   m_ObjectHideFlags: 0

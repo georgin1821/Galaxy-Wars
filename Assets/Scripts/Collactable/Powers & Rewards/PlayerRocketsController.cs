@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerRocketsController : PlayerCollectiblesControllerAbstract
@@ -8,7 +9,9 @@ public class PlayerRocketsController : PlayerCollectiblesControllerAbstract
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        Player.Instance.FireRockets();
+		floatingText.GetComponentInChildren<TextMeshPro>().text = "ROCKETS";
+
+		Player.Instance.FireRockets();
 
     }
 }

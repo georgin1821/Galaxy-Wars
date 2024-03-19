@@ -11,7 +11,7 @@ public class EnemyFire : EnemyWeaponAbstract
     GameObject projectile;
     private void Start()
     {
-        InvokeRepeating("FireChance", delayToShoot, repeatTime);
+        InvokeRepeating("FireChance", delayToShoot, autoRepeat);
     }
 
     protected override void FireChance()

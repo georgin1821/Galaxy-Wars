@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerShieldPowerController : PlayerCollectiblesControllerAbstract
@@ -7,6 +8,8 @@ public class PlayerShieldPowerController : PlayerCollectiblesControllerAbstract
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        Player.Instance.ShieldsUp();
+		floatingText.GetComponentInChildren<TextMeshPro>().text = "SHIELDS";
+
+		Player.Instance.ShieldsUp();
     }
 }

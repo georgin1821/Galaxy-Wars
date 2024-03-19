@@ -125,6 +125,7 @@ public sealed class GamePlayController : SimpleSingleton<GamePlayController>
 				GameDataManager.Instance.LevelCoins = levelCoins;
 				GameDataManager.Instance.LevelScore = levelScore;
 				GameDataManager.Instance.batteryLife -= 10;
+
 				GameDataManager.Instance.LevelIndex = LevelSpawner.instance.LevelIndex;
 				GameDataManager.Instance.Save();
 
