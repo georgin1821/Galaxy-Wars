@@ -10,7 +10,7 @@ public class MaxGunPowerController : PlayerCollectiblesControllerAbstract
 		base.OnTriggerEnter(other);
 		floatingText.GetComponentInChildren<TextMeshPro>().text = "MAXGUNS";
 
-		Player.Instance.FireRockets();
+		Player.Instance.MaxGunsPower();
 
 	}
 }

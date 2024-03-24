@@ -153,6 +153,19 @@ public class Player : SimpleSingleton<Player>
             GameUIController.Instance.UpdateWeaponRankStatus(gunUpgrades);
         }
     }
+    public void MaxGunsPower()
+    {
+        if (GamePlayController.Instance.state == GameState.PLAY)
+        {
+            foreach (var weapon in weapons)
+            {
+                weapon.WeaponUpgrades++;
+                gunUpgrades++; // the same ranks for all weapons and same maximum
+            }
+
+            GameUIController.Instance.UpdateWeaponRankStatus(gunUpgrades);
+        }
+    }
 
     public void DamagePlayer()
     {
