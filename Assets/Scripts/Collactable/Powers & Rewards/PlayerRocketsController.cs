@@ -11,7 +11,7 @@ public class PlayerRocketsController : PlayerCollectiblesControllerAbstract
         base.OnTriggerEnter(other);
 		floatingText.GetComponentInChildren<TextMeshPro>().text = "ROCKETS";
 
-		Player.Instance.FireRockets();
+		Player.Instance.InstatiateRockets();
 
     }
 }

@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSpawner : MonoBehaviour
+public class LevelSpawner : SimpleSingleton<LevelSpawner>
 {
 
-    public static LevelSpawner instance;
 
     [SerializeField] List<LevelConfig> levels;
 
@@ -14,14 +13,8 @@ public class LevelSpawner : MonoBehaviour
 
     public int LevelIndex { get; private set; }
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
-
+    // set the list of all waves at the current level(Waves)
+    // calls the method who instatiate all the waves on the WaveSpawner script
     public void SpawnLevelWithIndex(int index)
     {
         if (index < levels.Count)

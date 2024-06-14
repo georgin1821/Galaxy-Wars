@@ -25,11 +25,11 @@ public class PlayerEditor : Editor
 			EditorGUILayout.HelpBox("Caution no firePos assign!", MessageType.Warning);
 		}
 
-		EditorGUILayout.LabelField("GameDev Settings", EditorStyles.boldLabel);
-		EditorGUILayout.PropertyField(isAlwaysShooting, new GUIContent("isAlwaysShooting"));
+		//EditorGUILayout.LabelField("GameDev Settings", EditorStyles.boldLabel);
+		//EditorGUILayout.PropertyField(isAlwaysShooting, new GUIContent("isAlwaysShooting"));
 
-		EditorGUILayout.LabelField("VFX", EditorStyles.boldLabel);
-		EditorGUILayout.PropertyField(firePos, new GUIContent("firePos"));
+		//EditorGUILayout.LabelField("VFX", EditorStyles.boldLabel);
+		//EditorGUILayout.PropertyField(firePos, new GUIContent("firePos"));
 
 
 	}

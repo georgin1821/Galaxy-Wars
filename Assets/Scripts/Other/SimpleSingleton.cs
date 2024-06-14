@@ -10,6 +10,8 @@ public class SimpleSingleton<T> : MonoBehaviour where T : SimpleSingleton<T>
         get { return instance; }
     }
 
+
+    //checking if singleton exists
     public static bool IsInitialized
     {
         get { return instance != null; }
@@ -17,6 +19,7 @@ public class SimpleSingleton<T> : MonoBehaviour where T : SimpleSingleton<T>
 
     protected virtual void Awake()
     {
+        // always singletons initializes at awake method but with random order
         InitializeInstance();
     }
 

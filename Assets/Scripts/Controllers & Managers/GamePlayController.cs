@@ -50,7 +50,7 @@ public sealed class GamePlayController : SimpleSingleton<GamePlayController>
 		InitializeGame();
 
 		victoryClip = AudioType.victory;
-		soundtrack = LevelSpawner.instance.Levels[GameDataManager.Instance.CurrentLevel].MusicClip;
+		soundtrack = LevelSpawner.Instance.Levels[GameDataManager.Instance.CurrentLevel].MusicClip;
 		PlayClipWithFade(soundtrack);
 
 		UpdateState(GameState.INIT);
@@ -99,7 +99,7 @@ public sealed class GamePlayController : SimpleSingleton<GamePlayController>
 
 			case GameState.LOADLEVEL:
 
-				LevelSpawner.instance.SpawnLevelWithIndex(GameDataManager.Instance.CurrentLevel);
+				LevelSpawner.Instance.SpawnLevelWithIndex(GameDataManager.Instance.CurrentLevel);
 
 				UpdateState(GameState.PLAY);
 				break;
@@ -126,7 +126,7 @@ public sealed class GamePlayController : SimpleSingleton<GamePlayController>
 				GameDataManager.Instance.LevelScore = levelScore;
 				GameDataManager.Instance.batteryLife -= 10;
 
-				GameDataManager.Instance.LevelIndex = LevelSpawner.instance.LevelIndex;
+				GameDataManager.Instance.LevelIndex = LevelSpawner.Instance.LevelIndex;
 				GameDataManager.Instance.Save();
 
 				StopAudioWithFade(soundtrack);

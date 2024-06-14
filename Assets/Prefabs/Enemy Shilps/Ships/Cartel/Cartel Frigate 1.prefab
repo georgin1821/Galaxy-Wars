@@ -515,4 +515,3 @@ MonoBehaviour:
   prjectilePrefab: {fileID: 165506286884226736, guid: ddc99ffdd2325334ea0001908ac31cb1, type: 3}
   chanceToFire: 10
   delayToShoot: 0
-  repeatTime: 0

@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
     {
         if (UnityEngine.Random.Range(1, 100) <= chanchToDropPower)
         {
-            PowerUpController.Instance.InstatiatePower(this.transform);
+            PowersController.Instance.InstatiatePower(this.transform);
         }
     }
     private void OnDiewDropGems()

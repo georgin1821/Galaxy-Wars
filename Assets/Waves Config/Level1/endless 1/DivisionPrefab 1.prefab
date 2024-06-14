@@ -50,10 +50,10 @@ MonoBehaviour:
   preDelay: 0
   divisionConfig:
     general:
-      path: {fileID: 3305447395282386722, guid: 8dbee08d93016d14ea89f75f81e91bc6, type: 3}
+      path: {fileID: 4844799549918398176, guid: 6eec83d8dd31cb14dbc8a5ca56577c80, type: 3}
       formation: {fileID: 0}
       enemyPrefabs:
-      - {fileID: 7129826148347833026, guid: 943891c3e7e6ef2478c9bffee73af982, type: 3}
+      - {fileID: 6977796046483298814, guid: 47ceee21425df394f81181076a73a1d8, type: 3}
       isFormMoving: 0
       isRotating: 1
       endlessMove: 1

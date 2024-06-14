@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6438535020281242702}
   - component: {fileID: -4216537047025905763}
   m_Layer: 0
-  m_Name: form  sort
+  m_Name: division_test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,19 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4fd92a5d558fe48824a1fb3d5ba5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  divSet: 0
+  divSet: 1
   waypoints: []
   formationWaypoints: []
   preDelay: 0
   divisionConfig:
     general:
-      path: {fileID: 1757285545161044320, guid: cc167eb2dbe77e4489168b17fa2724bb, type: 3}
-      formation: {fileID: 0}
+      path: {fileID: 8560433136325955295, guid: 90cbbb7b6ad57a3448ef876f220a86f7, type: 3}
+      formation: {fileID: 797538306395627566, guid: 878877c6b89dc4a43a0fcb215eda9939, type: 3}
       enemyPrefabs:
-      - {fileID: 7129826148347833026, guid: 943891c3e7e6ef2478c9bffee73af982, type: 3}
-      isFormMoving: 0
+      - {fileID: 5908782684963334939, guid: 7c47305c7bbaa83428ecf42034104bb4, type: 3}
+      isFormMoving: 1
       isRotating: 0
-      endlessMove: 1
+      endlessMove: 0
       isChasingPlayer: 0
       isSwampForm: 0
     smooth:
@@ -66,7 +66,7 @@ MonoBehaviour:
       rotationSpeed: 400
     spawns:
       moveSpeed: 4
-      numberOfEnemies: 6
+      numberOfEnemies: 10
       timeBetweenSpawns: 0.3
     formMove:
       curve:

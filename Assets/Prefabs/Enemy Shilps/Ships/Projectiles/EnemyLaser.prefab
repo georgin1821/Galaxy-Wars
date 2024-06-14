@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8092565151912757861}
   - component: {fileID: -2323542838102585394}
   - component: {fileID: 9092871920047763298}
+  - component: {fileID: -5022176656414612330}
   m_Layer: 8
   m_Name: EnemyLaser
   m_TagString: Projectile
@@ -169,3 +170,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactAudio: 18
+--- !u!114 &-5022176656414612330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165506286884226736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7cd813c00911f4b84970ddcac16dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpeen: 90

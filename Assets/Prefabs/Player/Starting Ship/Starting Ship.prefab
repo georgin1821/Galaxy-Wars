@@ -31,38 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8497122000838484136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &746537908277179978
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 651370600413997750}
-  m_Layer: 6
-  m_Name: Engines
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &651370600413997750
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746537908277179978}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8406044671327542897}
-  m_Father: {fileID: 8497122000838484136}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1790192757906002912
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 1790192757906002912}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.67, z: 0}
+  m_LocalPosition: {x: 0, y: 0.781, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4933,7 +4901,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 651370600413997750}
+  - {fileID: 8406044671327542897}
   - {fileID: 3984376153323646517}
   - {fileID: 1416074892558850024}
   - {fileID: 1618016695975148003}
@@ -5051,12 +5019,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7197185777655308194, guid: b9d503df14d571749838fe52664fb13a, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 12eabc30bc42bae468417f22001c9a2f, type: 3}
-  m_Resource: {fileID: 8300000, guid: 12eabc30bc42bae468417f22001c9a2f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2d764032bf6b9d34892095090eaaf670, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2d764032bf6b9d34892095090eaaf670, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.599
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5173,13 +5141,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlwaysShooting: 0
-  collideWithEnemy: 0
   isAbleToFire: 1
-  engineVFX: {fileID: 8406044671327542910}
-  shootingFlames: {fileID: 1059050182630161250}
+  collideWithEnemy: 0
+  engineVFX: {fileID: 8406044671327542908}
+  shootingVFX: {fileID: 1790192757906002912}
   firePos: {fileID: 1416074892558850024}
   rocketPrefab: {fileID: 165506286884226736, guid: bc7b3756f256764498dcb582d293fd7b, type: 3}
-  targets: []
 --- !u!114 &8296172668688822993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5274,12 +5241,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8406044671327542908}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.16}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.16000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 651370600413997750}
+  m_Father: {fileID: 8497122000838484136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &8406044671327542910
 ParticleSystem:

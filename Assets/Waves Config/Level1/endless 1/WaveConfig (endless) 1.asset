@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   divisions:
   - {fileID: 5049398550342009626, guid: 7703bc0677e175543a10566f1d9ad152, type: 3}
-  - {fileID: 5049398550342009626, guid: 943b876e00e6f2b458fb5933575ca115, type: 3}
   spawnDelay: 0
   isBoss: 0

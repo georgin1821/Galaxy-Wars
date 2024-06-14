@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpController : SimpleSingleton<PowerUpController>
+public class PowersController : SimpleSingleton<PowersController>
 {
 
 	[SerializeField] private Power[] powers;

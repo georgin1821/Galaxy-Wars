@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Level Config")]
+[CreateAssetMenu(menuName = "SO/Level Config")]
 public class LevelConfig : ScriptableObject
 {
 	[SerializeField] List<WaveConfig> waves;

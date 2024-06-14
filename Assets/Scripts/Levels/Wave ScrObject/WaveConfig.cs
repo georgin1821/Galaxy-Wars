@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Wave Config")]
+[CreateAssetMenu(menuName = "SO/Wave Config")]
 
 public class WaveConfig : ScriptableObject
 {
-    [SerializeField] List<GameObject> divisions;
-    [SerializeField] float spawnDelay;
-    public bool isBoss;
+	[SerializeField] private List<GameObject> divisions;
 
-    public List<GameObject> GetDivisions()
-    {
-        return divisions;
-    }
-    public float GetDelay()
-    {
-        return spawnDelay;
-    }
+	[SerializeField] private bool isBoss;
+	[SerializeField] public bool IsBoss { get { return isBoss; } }
+
+
+	public List<GameObject> GetDivisions()
+	{
+		return divisions;
+	}
 
 }

@@ -6,12 +6,13 @@ using UnityEngine;
 public class DivisionSpawn : MonoBehaviour
 {
     public static event Action OnLastEnemyAtFormation;
+
     [SerializeField] DivisionStartingState divSet;
 
     [HideInInspector] public List<Transform> waypoints;
     [HideInInspector] public List<Transform> formationWaypoints;
 
-    [SerializeField] float preDelay;
+    [SerializeField] float delayToShow;
     [SerializeField] DivisionConfiguration divisionConfig;
 
     GameObject[] enemyPrefabs;
@@ -72,7 +73,7 @@ public class DivisionSpawn : MonoBehaviour
     IEnumerator InstantiateDivision()
     {
         EnemyPathfinding ep = null;
-        yield return new WaitForSeconds(preDelay);
+        yield return new WaitForSeconds(delayToShow);
         enemyPrefabs = divisionConfig.general.enemyPrefabs;
         for (index = 0; index < divisionConfig.spawns.numberOfEnemies; index++)
         {
@@ -116,7 +117,7 @@ public class DivisionSpawn : MonoBehaviour
 
         return Instantiate(enemyPrefabs[i],
                            waypoints[idPos].position,
-                           enemyPrefabs[i].transform.rotation);
+                           Quaternion.identity);
     }
 }
 public enum DivisionStartingState
