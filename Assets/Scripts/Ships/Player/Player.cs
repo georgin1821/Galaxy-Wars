@@ -23,7 +23,7 @@ public class Player : SimpleSingleton<Player>
 	[Space(5)]
 	[Header("Powers")]
 	[SerializeField] private GameObject rocketPrefab;
-	private GameObject[] targets; 
+	private GameObject[] targets;
 	private int rocketsToShoot = 7;
 	private float arcAngle = 40;
 	private int gunUpgrades = 1;
@@ -134,21 +134,19 @@ public class Player : SimpleSingleton<Player>
 	#endregion
 
 
-
-
-
 	public void DamagePlayer()
 	{
 		if (!collideWithEnemy || playerHasShield) return;
 
 		PlayerDeath();
 	}
-
+	#region public methods
 	public void PlayerAnimation()
 	{
 		transform.position = new Vector3(0, -6, 0);
 		anim.Play("Intro");
 	}
+	#endregion
 
 
 	#region private methods
