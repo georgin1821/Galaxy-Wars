@@ -18,7 +18,7 @@ public class DivisionVerticalSpawn : MonoBehaviour
         xMax = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
         yMax = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y;
 
-        EnemyCount.instance.CountEnemiesAtScene(shipsCount);
+        EnemyCount.Instance.CountEnemiesAtScene(shipsCount);
 
         StartCoroutine(InstatiateWave());
     }

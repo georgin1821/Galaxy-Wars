@@ -9,7 +9,7 @@ public class SquadPanelController : MonoBehaviour
 	private string shipName;
 	private int selectedShip;
 	[SerializeField] TMP_Text powerText, upgradeInfo, coinsText, name;
-	[SerializeField] Button shipBtn, squad1;
+	[SerializeField] Button shipBtn, squad1, squad2, squad3, squad4;
 	Button[] ShipColectionBtns;
 	[SerializeField] Button tab1, tab2, tab3;
 	public GameObject upgradePanel;
@@ -24,15 +24,17 @@ public class SquadPanelController : MonoBehaviour
 		Button ship5 = getChildGameObject(upgradePanel, "Ship5").GetComponent<Button>();
 		Button ship6 = getChildGameObject(upgradePanel, "Ship6").GetComponent<Button>();
 		ShipColectionBtns = new[] { ship1, ship2, ship3, ship4, ship5, ship6 };
-		// powerText.text = GameDataManager.Instance.shipsPower[selectedShip].ToString();
-		squad1.gameObject.GetComponent<Image>().sprite = GameDataManager.Instance.squad[0].shipSprite;
+		 powerText.text = GameDataManager.Instance.ships[selectedShip].power.ToString();
+		squad1.gameObject.GetComponent<Image>().sprite = GameDataManager.Instance.squad[0].sprite;
+		squad2.gameObject.GetComponent<Image>().sprite = GameDataManager.Instance.squad[1].sprite;
+		squad3.gameObject.GetComponent<Image>().sprite = GameDataManager.Instance.squad[2].sprite;
+		squad4.gameObject.GetComponent<Image>().sprite = GameDataManager.Instance.squad[3].sprite;
 		squad1.onClick.AddListener(delegate { ButtonClick(squad1); });        //disable eneable if unlocked ships btns
 
-		for (int i = 0; i < GameDataManager.Instance.ships.Length; i++)
+		for (int i = 0; i < GameDataManager.Instance.ships.Count; i++)
 		{
-			ShipColectionBtns[i].interactable = GameDataManager.Instance.isShipUnlocked[0];
+			//ShipColectionBtns[i].interactable = GameDataManager.Instance.ships[0].isUnloked;
 		}
-		squad1.gameObject.GetComponent<Image>().sprite = GameDataManager.Instance.squad[1].shipSprite;
 
 		tab1.onClick.AddListener(delegate { Tabs(tab1); });
 		tab2.onClick.AddListener(delegate { Tabs(tab2); });
@@ -47,7 +49,7 @@ public class SquadPanelController : MonoBehaviour
 	}
 	public void SelectShip()
 	{
-		shipName = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+		string shipName = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
 
 		switch (shipName)
 		{
@@ -63,13 +65,17 @@ public class SquadPanelController : MonoBehaviour
 				selectedShip = 1;
 				UpdateUpgradeInfo();
 				break;
+			case "Ship4":
+				selectedShip = 3;
+				UpdateUpgradeInfo();
+				break;
 		}
 	}
 	private void UpdateUpgradeInfo()
 	{
-		amountUpgrade = Mathf.Round(GameDataManager.Instance.ships.Rank * 100 * 1.1f);
-		powerText.text = GameDataManager.Instance.ships[selectedShip].startingPower.ToString();
-		name.text = GameDataManager.Instance.ships[selectedShip].name.ToString();
+		//amountUpgrade = Mathf.Round(GameDataManager.Instance.ships.Rank * 100 * 1.1f);
+		//powerText.text = GameDataManager.Instance.ships[selectedShip].startingPower.ToString();
+		//name.text = GameDataManager.Instance.ships[selectedShip].name.ToString();
 
 		upgradeInfo.text = amountUpgrade.ToString();
 	}
@@ -79,14 +85,14 @@ public class SquadPanelController : MonoBehaviour
 			switch (selectedShip)
 			{
 				case 0:
-					amountUpgrade = Mathf.Round(GameDataManager.Instance.shipsRank[selectedShip] * 100 * 1.1f);
+					amountUpgrade = Mathf.Round(GameDataManager.Instance.ships[selectedShip].rank * 100 * 1.1f);
 					if (GameDataManager.Instance.coins >= amountUpgrade)
 					{
 						Upgrade();
 					}
 					break;
 				case 1:
-					amountUpgrade = Mathf.Round(GameDataManager.Instance.shipsRank[selectedShip] * 100 * 1.1f);
+					amountUpgrade = Mathf.Round(GameDataManager.Instance.ships[selectedShip].rank * 100 * 1.1f);
 					if (GameDataManager.Instance.coins >= amountUpgrade)
 					{
 						Upgrade();
@@ -99,12 +105,12 @@ public class SquadPanelController : MonoBehaviour
 	{
 
 		GameDataManager.Instance.selectedShip = selectedShip;
-		int power = GameDataManager.Instance.shipsPower[selectedShip] + 100;
-		GameDataManager.Instance.shipsPower[selectedShip] = power;
+		int power = GameDataManager.Instance.ships[selectedShip].power + 100;
+		GameDataManager.Instance.ships[selectedShip].power = power;
 		GameDataManager.Instance.coins -= (int)amountUpgrade;
-		GameDataManager.Instance.shipsRank[selectedShip]++;
-		powerText.text = GameDataManager.Instance.shipsPower[selectedShip].ToString();
-		amountUpgrade = Mathf.Round(GameDataManager.Instance.shipsRank[selectedShip] * 100 * 1.1f);
+		GameDataManager.Instance.ships[selectedShip].rank++;
+		powerText.text = GameDataManager.Instance.ships[selectedShip].power.ToString();
+		amountUpgrade = Mathf.Round(GameDataManager.Instance.ships[selectedShip].rank * 100 * 1.1f);
 		upgradeInfo.text = amountUpgrade.ToString();
 
 		coinsText.text = GameDataManager.Instance.coins.ToString();
@@ -124,19 +130,19 @@ public class SquadPanelController : MonoBehaviour
 		if(button == tab1)
 		{
 			//tab1.gameObject.GetComponent<Image>().color = new Color(1, 1,1, .4f);
-			shipBtn.image.sprite = GameDataManager.Instance.squad[0].shipSprite;
+			shipBtn.image.sprite = GameDataManager.Instance.squad[0].sprite;
 
 		}
 		if (button == tab2)
 		{
 			
-			shipBtn.image.sprite = GameDataManager.Instance.squad[1].shipSprite;
+			shipBtn.image.sprite = GameDataManager.Instance.squad[1].sprite;
 
 		}
 		if (button == tab3)
 		{
 			
-			shipBtn.image.sprite = GameDataManager.Instance.squad[2].shipSprite;
+			shipBtn.image.sprite = GameDataManager.Instance.squad[2].sprite;
 
 		}
 	}

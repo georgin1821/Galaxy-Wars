@@ -5,125 +5,125 @@ using UnityEngine;
 
 public class DivisionSpawn : MonoBehaviour
 {
-    public static event Action OnLastEnemyAtFormation;
+	public static event Action OnLastEnemyAtFormation;
 
-    [SerializeField] DivisionStartingState divSet;
+	[HideInInspector] public List<Transform> waypoints;
+	[HideInInspector] public List<Transform> formationWaypoints;
 
-    [HideInInspector] public List<Transform> waypoints;
-    [HideInInspector] public List<Transform> formationWaypoints;
+	[SerializeField] DivisionStates divSet;
+	[SerializeField] float delayToSpawn;
+	[SerializeField] DivisionConfiguration divisionConfig;
 
-    [SerializeField] float delayToShow;
-    [SerializeField] DivisionConfiguration divisionConfig;
+	private GameObject[] enemyPrefabs;
+	private int index;
+	#region Unity
+	private void OnValidate()
+	{
+		switch (divSet)
+		{
+			case DivisionStates.Endless:
+				divisionConfig.general.endlessMove = true;
+				divisionConfig.general.isFormMoving = false;
+				divisionConfig.general.formation = null;
+				divisionConfig.formMove = null;
+				divisionConfig.aISettings = null;
+				divisionConfig.general.isChasingPlayer = false;
+				divisionConfig.general.isSwampForm = false;
+				break;
+			case DivisionStates.Formation:
+				divisionConfig.general.endlessMove = false;
+				break;
+			case DivisionStates.TwoPoints:
+				divisionConfig.general.endlessMove = false;
+				divisionConfig.smooth.smoothMovement = true;
+				break;
+			case DivisionStates.ChasingPlayer:
+				divisionConfig.general.isChasingPlayer = true;
+				divisionConfig.general.isFormMoving = false;
+				divisionConfig.general.endlessMove = false;
+				divisionConfig.formMove = null;
+				break;
+		}
+	}
+	void Start()
+	{
+		waypoints = new List<Transform>();
+		formationWaypoints = new List<Transform>();
 
-    GameObject[] enemyPrefabs;
-    int index;
-    private void OnValidate()
-    {
-        switch (divSet)
-        {
-            case DivisionStartingState.Endless:
-                divisionConfig.general.endlessMove = true;
-                divisionConfig.general.isFormMoving = false;
-                divisionConfig.general.formation = null;
-                divisionConfig.formMove = null;
-                divisionConfig.aISettings = null;
-                divisionConfig.general.isChasingPlayer = false;
-                divisionConfig.general.isSwampForm = false;
-                break;
-            case DivisionStartingState.Formation:
-                divisionConfig.general.endlessMove = false;
-                break;
-            case DivisionStartingState.TwoPoints:
-                divisionConfig.general.endlessMove = false;
-                divisionConfig.smooth.smoothMovement = true;
-                break;
-            case DivisionStartingState.ChasingPlayer:
-                divisionConfig.general.isChasingPlayer = true;
-                divisionConfig.general.isFormMoving = false;
-                divisionConfig.general.endlessMove = false;
-                divisionConfig.formMove = null;
+		if (divisionConfig.general.path != null)
+		{
+			foreach (Transform child in divisionConfig.general.path.transform)
+			{
+				waypoints.Add(child);
+			}
+		}
 
-                break;
-        }
-    }
-    void Start()
-    {
-        waypoints = new List<Transform>();
-        formationWaypoints = new List<Transform>();
+		if (divisionConfig.general.formation != null)
+		{
+			foreach (Transform child in divisionConfig.general.formation.transform)
+			{
+				formationWaypoints.Add(child);
+			}
+		}
 
-        if (divisionConfig.general.path != null)
-        {
-            foreach (Transform child in divisionConfig.general.path.transform)
-            {
-                waypoints.Add(child);
-            }
-        }
+		EnemyCount.Instance.CountEnemiesAtScene(divisionConfig.spawns.numberOfEnemies);
+		StartCoroutine(InstantiateDivision());
+	}
+	#endregion
+	private void Handler()
+	{
+		OnLastEnemyAtFormation?.Invoke();
+	}
+	private GameObject InstatiatePrefab(DivisionStates set)
+	{
+		int i = UnityEngine.Random.Range(0, enemyPrefabs.Length);
+		int idPos;
+		if (set == DivisionStates.TwoPoints) idPos = index;
+		else idPos = 0;
 
-        if (divisionConfig.general.formation != null)
-        {
-            foreach (Transform child in divisionConfig.general.formation.transform)
-            {
-                formationWaypoints.Add(child);
-            }
-        }
+		GameObject enemy = Instantiate(enemyPrefabs[i],
+						   waypoints[idPos].position,
+						   Quaternion.identity);
+		enemy.transform.Rotate(new Vector3(0, 0, 180));
+		return enemy;
+	}
+	IEnumerator InstantiateDivision()
+	{
+		EnemyPathfinding ep = null;
+		yield return new WaitForSeconds(delayToSpawn);
+		enemyPrefabs = divisionConfig.general.enemyPrefabs;
+		for (index = 0; index < divisionConfig.spawns.numberOfEnemies; index++)
+		{
+			GameObject newEnemy = InstatiatePrefab(divSet);
+			ep = newEnemy.GetComponent<EnemyPathfinding>();
+			ep.SetDivisionConfiguration(divisionConfig, this, id: index);
 
-        EnemyCount.instance.CountEnemiesAtScene(divisionConfig.spawns.numberOfEnemies);
-        StartCoroutine(InstantiateDivision());
-    }
-    IEnumerator InstantiateDivision()
-    {
-        EnemyPathfinding ep = null;
-        yield return new WaitForSeconds(delayToShow);
-        enemyPrefabs = divisionConfig.general.enemyPrefabs;
-        for (index = 0; index < divisionConfig.spawns.numberOfEnemies; index++)
-        {
-            GameObject newEnemy = InstatiatePrefab(divSet);
-            ep = newEnemy.GetComponent<EnemyPathfinding>();
-            ep.SetDivisionConfiguration(divisionConfig, this, id: index);
+			switch (divSet)
+			{
+				case DivisionStates.Endless:
+					ep.StartingState(EnemyMovingState.DivisionToPath);
+					break;
 
-            switch (divSet)
-            {
-                case DivisionStartingState.Endless:
-                    ep.StartingState(EnemyStartingState.DivisionToPath);
-                    break;
+				case DivisionStates.Formation:
+					ep.StartingState(EnemyMovingState.DivisionToPath);
+					break;
 
-                case DivisionStartingState.Formation:
-                    ep.StartingState(EnemyStartingState.DivisionToPath);
-                    break;
-
-                case DivisionStartingState.TwoPoints:
-                    ep.StartingState(EnemyStartingState.PointToPoint);
-                    break;
-                case DivisionStartingState.ChasingPlayer:
-                    ep.StartingState(EnemyStartingState.ChasingPlayer);
-                    break;
-            }
-            yield return new WaitForSeconds(divisionConfig.spawns.timeBetweenSpawns);
-        }
-        ep.OnPositionForamtion += Handler;
-    }
-
-    private void Handler()
-    {
-        OnLastEnemyAtFormation?.Invoke();
-    }
-
-    private GameObject InstatiatePrefab(DivisionStartingState set)
-    {
-        int i = UnityEngine.Random.Range(0, enemyPrefabs.Length);
-        int idPos;
-        if (set == DivisionStartingState.TwoPoints) idPos = index;
-        else idPos = 0;
-
-        return Instantiate(enemyPrefabs[i],
-                           waypoints[idPos].position,
-                           Quaternion.identity);
-    }
+				case DivisionStates.TwoPoints:
+					ep.StartingState(EnemyMovingState.PointToPoint);
+					break;
+				case DivisionStates.ChasingPlayer:
+					ep.StartingState(EnemyMovingState.ChasingPlayer);
+					break;
+			}
+			yield return new WaitForSeconds(divisionConfig.spawns.timeBetweenSpawns);
+		}
+		ep.OnPositionForamtion += Handler;
+	}
 }
-public enum DivisionStartingState
+public enum DivisionStates
 {
-    Endless,
-    Formation,
-    TwoPoints,
-    ChasingPlayer
+	Endless,
+	Formation,
+	TwoPoints,
+	ChasingPlayer
 }

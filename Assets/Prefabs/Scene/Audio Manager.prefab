@@ -43,7 +43,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1856394676934395723, guid: b9d503df14d571749838fe52664fb13a, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -172,7 +171,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2203343289925205177, guid: b9d503df14d571749838fe52664fb13a, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -269,7 +267,7 @@ GameObject:
   - component: {fileID: 4063994826276571741}
   - component: {fileID: 4063994826276571740}
   m_Layer: 0
-  m_Name: Soundtracks
+  m_Name: Soundtrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,7 +299,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3915206677805333624, guid: b9d503df14d571749838fe52664fb13a, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -441,7 +438,7 @@ MonoBehaviour:
     - type: 1
       clip: {fileID: 8300000, guid: 316c5a9072961a64696482a64fdbae8d, type: 3}
       volume: 0.3
-    - type: 0
+    - type: 2
       clip: {fileID: 8300000, guid: cf3eb052ff79a9145baf28a5c3e6cced, type: 3}
       volume: 1
     - type: 22
@@ -450,7 +447,7 @@ MonoBehaviour:
     - type: 24
       clip: {fileID: 8300000, guid: 0bf456f9862f112458f07d84239d2031, type: 3}
       volume: 1
-    - type: 23
+    - type: 11
       clip: {fileID: 8300000, guid: 6cad787e3724d0e48bab75c121b88a4e, type: 3}
       volume: 0.4
     - type: 12
@@ -463,7 +460,7 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: cfb730617b78b0e489fb5156e6af39ea, type: 3}
       volume: 1
     - type: 15
-      clip: {fileID: 8300000, guid: b71c1f9e87ab1b4419c2c8bdb1ceb78c, type: 3}
+      clip: {fileID: 8300000, guid: 2e05483a8c72f1742aafe13eb3ffe231, type: 3}
       volume: 0.7
     - type: 16
       clip: {fileID: 8300000, guid: 40a849af09636e9448ffe1c6a2be5a5d, type: 3}
@@ -477,11 +474,11 @@ MonoBehaviour:
     - type: 19
       clip: {fileID: 8300000, guid: 6f6b57ca18e257244ab0a91aea0eb57a, type: 3}
       volume: 0.8
+    - type: 25
+      clip: {fileID: 8300000, guid: cfb730617b78b0e489fb5156e6af39ea, type: 3}
+      volume: 0.8
     - type: 20
       clip: {fileID: 8300000, guid: 3f0892cbbd62b17459b5d201d9d8a293, type: 3}
-      volume: 0.8
-    - type: 25
-      clip: {fileID: 8300000, guid: 809ec7c55baf41b48b282ae695f41867, type: 3}
       volume: 0.8
   - source: {fileID: 4063994826276571740}
     audio:

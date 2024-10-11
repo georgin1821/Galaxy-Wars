@@ -44,16 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4fd92a5d558fe48824a1fb3d5ba5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  divSet: 1
   waypoints: []
   formationWaypoints: []
-  delayToShow: 1
+  divSet: 1
+  delayToSpawn: 0
   divisionConfig:
     general:
       path: {fileID: 5314391573347334179, guid: e2c03e46327a0a24c827d61ed4fe8c9b, type: 3}
-      formation: {fileID: 6803613512715505930, guid: 873c8a8eaddca9a4089520fa9493dda6, type: 3}
+      formation: {fileID: 797538306395627566, guid: b2de966f0a54d2e439234617dcb994bd, type: 3}
       enemyPrefabs:
-      - {fileID: 2823241783973076548, guid: 447e511ddf34f82408480ded04522946, type: 3}
+      - {fileID: 5232501604013439184, guid: 4876ba47b7f7be443a56228e8f244185, type: 3}
       isFormMoving: 1
       isRotating: 0
       endlessMove: 0
@@ -63,9 +63,9 @@ MonoBehaviour:
       smoothDelta: 0.3
       smoothMovement: 0
     rotation:
-      rotationSpeed: 400
+      rotationSpeed: 600
     spawns:
-      moveSpeed: 4
+      moveSpeed: 3
       numberOfEnemies: 10
       timeBetweenSpawns: 0.3
     formMove:

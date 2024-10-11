@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Level Config")]
 public class LevelConfig : ScriptableObject
 {
-	[SerializeField] List<WaveConfig> waves;
-	
+	[SerializeField] List<WaveConfig> waves;	
 	public List<WaveConfig> Waves { get { return waves; } }
 
 	[SerializeField] private AudioType musicClip;

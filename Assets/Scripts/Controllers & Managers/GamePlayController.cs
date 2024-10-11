@@ -13,7 +13,6 @@ public sealed class GamePlayController : SimpleSingleton<GamePlayController>
 	[Header("Prefabs")]
 	[SerializeField] private GameObject[] scrollingBgsPrefabs;
 
-
 	//------public fields
 	public GameState state; //---------*to be serialize only--------------
 	[HideInInspector] public bool andOfAnimation;
@@ -30,7 +29,6 @@ public sealed class GamePlayController : SimpleSingleton<GamePlayController>
 	private int levelScore;
 	private AudioType victoryClip;
 	private AudioType soundtrack;
-
 
 	private int currentSquadShip = 0;
 
@@ -72,9 +70,9 @@ public sealed class GamePlayController : SimpleSingleton<GamePlayController>
 	private void SetSquadPrefabs()
 	{
 		//set the player squad prefabs from GameDataManager
-		GameObject pr1 = GameDataManager.Instance.squad[0].shipPrefab;
-		GameObject pr2 = GameDataManager.Instance.squad[1].shipPrefab;
-		GameObject pr3 = GameDataManager.Instance.squad[2].shipPrefab;
+		GameObject pr1 = GameDataManager.Instance.squad[0].prefab;
+		GameObject pr2 = GameDataManager.Instance.squad[1].prefab;
+		GameObject pr3 = GameDataManager.Instance.squad[2].prefab;
 		shipsPrefabs = new GameObject[] { pr1, pr2, pr3 };
 	}
 	public void SetLevelDifficulty()
@@ -159,7 +157,7 @@ public sealed class GamePlayController : SimpleSingleton<GamePlayController>
 				//UI
 				score = 0;
 				GameUIController.Instance.UpdateScore(score);
-				EnemyCount.instance.Count = 0;
+				EnemyCount.Instance.Count = 0;
 				levelScore = 0;
 				levelCoins = 0;
 				//update state to next only when player anim finishes

@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9025272162233380950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9025272162233380948}
+  - component: {fileID: 9025272162233380949}
+  - component: {fileID: 3776361749122958984}
+  - component: {fileID: 1140825770610722692}
+  - component: {fileID: 3837460776482167722}
+  - component: {fileID: 7062515720665501383}
+  - component: {fileID: 3167285014964195121}
+  - component: {fileID: 5923523003883969588}
+  - component: {fileID: 7706535136464586067}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9025272162233380948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: -5, z: -30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9025272162233380949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dffe3086ba1ba40a22f4863a005611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedShip: 0
+  gems: 0
+  shipUpgradeCards: 0
+  batteryLife: 0
+  isGameStartedFirstTime: 0
+  isLevelUnlocked: 
+  levelCompletedDifficulty: 
+  coins: 0
+  levelsCount: 0
+  squadsUnlocked: 1
+  enemiesKilled: 0
+  musicVolume: 0
+  soundVolume: 0
+  currentDifficulty: 0
+  dailyRewards: 
+  ships: []
+  squad: []
+--- !u!114 &3776361749122958984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ac1e17baac50a408907cca36715f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSpeedLevel: 1
+  loadingFrom: 0
+--- !u!114 &1140825770610722692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664bbc0c99ae8f44aaf7a118366227ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questList:
+  - progress: 1
+    title: Enemies Killed
+    itemReward: gols
+    questObjective: Kill 1000 enemies
+    id: 1
+    questObjectiveCount: 1000
+    questObjectiveRequirement: 0
+    nextQuest: 0
+    goldReward: 100
+  currentQuestList:
+  - progress: 1
+    title: 
+    itemReward: iii
+    questObjective: 
+    id: 0
+    questObjectiveCount: 0
+    questObjectiveRequirement: 0
+    nextQuest: 0
+    goldReward: 0
+--- !u!114 &3837460776482167722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64a9edc3a667634ab2a11249f53f103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardsChecked: 
+  dailyRewardsReady: 0
+--- !u!114 &7062515720665501383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99bce37435e78b34cbf6dba98f128db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3167285014964195121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8a1ecd5402b8149a385c4b6571298e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stages: []
+  stagesEasy: []
+  stagesmedium: []
+  stagesHard: []
+--- !u!114 &5923523003883969588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e920aaa7fc5a0f5489ab1c52fff94548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squad: []
+--- !u!114 &7706535136464586067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025272162233380950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f45ed04452cda42820eeb1576682af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipsDB:
+  - name: 0
+    sprite: {fileID: 21300000, guid: c2115567aec5a65459dddb127c410f4c, type: 3}
+    prefab: {fileID: 4798691700310100087, guid: 5f15cd99db2f9094ab247d0e4e80de3d, type: 3}
+    startingPower: 100
+    power: 0
+    rank: 1
+    isUnloked: 0
+  - name: 0
+    sprite: {fileID: 21300000, guid: 243430915b106e24eb9dea6b8b914aee, type: 3}
+    prefab: {fileID: 4798691700310100087, guid: 3952944a042a10a4e9a36741c03cf59c, type: 3}
+    startingPower: 150
+    power: 0
+    rank: 1
+    isUnloked: 0
+  - name: 0
+    sprite: {fileID: 21300000, guid: 2782de4c7c1c8544a9809b0585c9ab37, type: 3}
+    prefab: {fileID: 4798691700310100087, guid: 747bf6cf4321d82478f1011ed9bcd386, type: 3}
+    startingPower: 150
+    power: 0
+    rank: 1
+    isUnloked: 0
+  - name: 0
+    sprite: {fileID: 21300000, guid: 138ad2f2e76f8704e8b87f5a644c5c07, type: 3}
+    prefab: {fileID: 4798691700310100087, guid: 4a0413513838ac24991d125007bb8a6f, type: 3}
+    startingPower: 200
+    power: 0
+    rank: 1
+    isUnloked: 0

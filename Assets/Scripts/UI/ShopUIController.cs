@@ -8,17 +8,19 @@ using System;
 
 public class ShopUIController : MonoBehaviour
 {
-	public TMP_Text titletitleTxt;
+	public TMP_Text titletitleTxt,aniText;
 	public Button supplyBtn;
-	public Button currencyBtn;
-	public GameObject pane1, pane2, panelBox1;
+	public Button currencyBtn, coin1;
+	public GameObject pane1, pane2, panelBox1, paneAnim;
 	public Button boxBtn;
-
+	public Animator anim;
+	
 	private void OnEnable()
 	{
 		supplyBtn?.onClick.AddListener(delegate { OpenPanel(supplyBtn); });
 		currencyBtn?.onClick.AddListener(delegate { OpenPanel(currencyBtn); });
 		boxBtn?.onClick.AddListener(delegate { OpenBox(boxBtn); });
+		coin1.onClick.AddListener(PurchaseCoins1000);
 		DisablePanels();
 
 	}
@@ -33,6 +35,7 @@ public class ShopUIController : MonoBehaviour
 	{
 		supplyBtn.onClick.RemoveListener(delegate { OpenPanel(supplyBtn); });
 		currencyBtn.onClick.RemoveListener(delegate { OpenPanel(currencyBtn); });
+		coin1?.onClick.RemoveListener(PurchaseCoins1000);
 	}
 	private void OpenPanel(Button button)
 	{
@@ -60,8 +63,22 @@ public class ShopUIController : MonoBehaviour
 	}
 	public void CloseSmallPanel(GameObject gameObject)
 	{
-		gameObject.gameObject. SetActive(false);
+		gameObject.gameObject.SetActive(false);
 	}
 
-
+	private void PurchaseCoins1000()
+	{
+		int cost = 100;
+		anim.Play("buy_anim");
+		if (GameDataManager.Instance.gems >= cost)
+		{
+			GameDataManager.Instance.coins += 1000;
+			GameDataManager.Instance.gems -= 100;
+			MainSceneMenuController.instance.UpdateUI();
+		}
+		else
+		{
+			aniText.SetText("not enough gems");
+		}
+	}
 }

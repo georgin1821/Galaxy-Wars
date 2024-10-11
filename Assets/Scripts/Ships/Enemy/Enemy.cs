@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour
     }
     private void Die()
     {
-        EnemyCount.instance.Count--;
+        EnemyCount.Instance.Count--;
         GamePlayController.Instance.AddToScore(scoreValue);
         AudioController.Instance.PlayAudio(AudioType.EnemyDeathSound);
         VFXController.Instance.EnemyDeath(transform);

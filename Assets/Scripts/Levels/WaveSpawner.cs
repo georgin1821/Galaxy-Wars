@@ -13,13 +13,7 @@ public class WaveSpawner : SimpleSingleton<WaveSpawner>
 
 	private float delayBetweenWaves = 2f; //2 secs delay before wave appears
 
-	public void SpawnTheLevel()
-	{
-		StopAllCoroutines();
-		StartCoroutine(SpawnLevel());
-	}
-
-	//instatiate all the waves
+	#region CoRoutines
 	IEnumerator SpawnLevel()
 	{
 		float delay = 1.5f;
@@ -27,7 +21,7 @@ public class WaveSpawner : SimpleSingleton<WaveSpawner>
 
 		for (int waveIndex = 0; waveIndex < waves.Count; waveIndex++)
 		{
-			//show the info text (normal wave or boss)
+			//show the info text (normal wave or boss) get divisons
 			if (waves[waveIndex].IsBoss)
 			{
 				GameUIController.Instance.ShowWaveInfoText(waveIndex, waves.Count, "ARACHRON");
@@ -36,17 +30,16 @@ public class WaveSpawner : SimpleSingleton<WaveSpawner>
 			divisions = waves[waveIndex].GetDivisions();
 
 			yield return new WaitForSeconds(delay);
-
 			divisionInScene = new List<GameObject>();
+
 			// spawn teh diviesions
 			for (int i = 0; i < divisions.Count; i++)
 			{
+				//divisions objects on scene
 				GameObject division = Instantiate(divisions[i]);
 				divisionInScene.Add(division);
-
 				yield return null;
 			}
-
 			yield return null;
 
 			//waits player to shoot all enemies and then destroy divisions gameObects
@@ -55,6 +48,29 @@ public class WaveSpawner : SimpleSingleton<WaveSpawner>
 		}
 
 		GamePlayController.Instance.UpdateState(GameState.LEVELCOMPLETE);
+	}
+	IEnumerator NoEnemiesOnWave()
+	{
+		int enemiesCount = EnemyCount.Instance.Count;
+
+		while (EnemyCount.Instance.Count > 0)
+		{
+			yield return null;
+		}
+		//  OnEnemiesDieCount(enemiesCount);
+		yield return new WaitForSeconds(1);
+	}
+	#endregion
+
+	#region Public
+	public void SetWaves(List<WaveConfig> _waves)
+	{
+		waves = _waves;
+	}
+	public void SpawnTheLevel()
+	{
+		StopAllCoroutines();
+		StartCoroutine(SpawnLevel());
 	}
 	public void DestroyWaves()
 	{
@@ -65,22 +81,6 @@ public class WaveSpawner : SimpleSingleton<WaveSpawner>
 				Destroy(item);
 			}
 		}
-
 	}
-	IEnumerator NoEnemiesOnWave()
-	{
-		int enemiesCount = EnemyCount.instance.Count;
-
-		while (EnemyCount.instance.Count > 0)
-		{
-			yield return null;
-		}
-		//  OnEnemiesDieCount(enemiesCount);
-		yield return new WaitForSeconds(1);
-	}
-	public void SetWaves(List<WaveConfig> _waves)
-	{
-		waves = _waves;
-	}
-
+	#endregion
 }

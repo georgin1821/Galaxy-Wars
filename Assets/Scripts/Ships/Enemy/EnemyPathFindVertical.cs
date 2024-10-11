@@ -26,7 +26,7 @@ public class EnemyPathFindVertical : MonoBehaviour
             yield return null;
         }
         Destroy(gameObject);
-        EnemyCount.instance.Count--;
+        EnemyCount.Instance.Count--;
     }
     public void SetDivisionConfiguration(DivisionVerticalSpawn config)
     {

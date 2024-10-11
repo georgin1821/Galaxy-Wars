@@ -5,7 +5,6 @@ using UnityEngine;
 public class DrawWavePaths : MonoBehaviour
 {
 	public Transform[] points;
-
 	private void OnDrawGizmos()
 	{
 		Gizmos.color = Color.yellow;
@@ -22,8 +21,6 @@ public class DrawWavePaths : MonoBehaviour
 			DrawPaths();
 		}
 	}
-
-
 
 	void DrawPaths()
 	{
